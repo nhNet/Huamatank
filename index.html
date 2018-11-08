@@ -2,14 +2,47 @@
 <html>
 <head>
     <!-- Importing NH Net API libraries -->
-    <script src="https://nhnet.github.io/API/NH_NET_API.huaman.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <!-- Finished importing HuamanScripts -->
 </head>
 <body>
     <script>
-        if (window.location=="https://nhnet.github.io/Huamatank/"){
-            tunnelerPrep();
+        tunnelerPrep();
+        function tunnelerPrep(){
+            document.body.style.margin=0;
+            document.title="NH Net Tunneler";
+            document.body.style.overflow="hidden";
+            adScreen();
+            setTimeout(clickButton,3000);
+            function adScreen(){
+                document.body.innerHTML=
+                    '<img src="img/NH Net Tunneler.png" width='+window.innerWidth+' height='+window.innerHeight+'>';
+            }
+            function clickButton(){
+                document.body.style.background="black";
+                document.title="NH Net Tunneler";
+                document.head.innerHTML='<link rel="shortcut icon" href="img/icon.png"/>';
+                document.body.style.textAlign="center";
+                document.body.style.color="white";
+                document.body.style.fontSize="25px";
+                document.body.style.fontFamily="'Indie Flower', cursive";
+                document.body.innerHTML=
+                    '<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"/>'+
+                    '<style>button:hover{background:#111111;}button{padding:15px 30px 15px 30px;background:#000000;color:white;font-family:"Indie Flower", cursive;border: 4px solid transparent;border-radius:10px;font-size:40px;font-weight:bold;box-shadow: 0 15px 25px rgba(0,0,0,.2);border-image:linear-gradient(45deg, blue, green);border-image-slice:1;}</style>'+
+                    '<b><u><h1 style="margin-top:15px;font-size:150px;"><img src="img/icon.png" width="150px">NH Net Browser</h1></u></b>'+
+                    '<h1>You will have to click twice to get to the game...</h1>'+
+                    '<h1>Thank you for your patience while the game is loading up...</h1>'+
+                    '<br>'+
+                    '<button onclick="beginTunneler();"><img style="margin-top:20px" src="img/icon.png" width="50px">Start HuaMatank</button>';
+            }
+        }
+        function beginTunneler(){
+            document.body.innerHTML="";
+            document.title="NH Net Tunneler";
+            OpenWebinWeb("https://archive.org/embed/msdos_Tunneler_1991","","");
+            document.getElementById('huamanWeb').style.marginTop="-"+(window.innerHeight/100)*44.5+"px";
+            document.getElementById('huamanWeb').style.transformOrigin="0px 0px";
+            document.getElementById('huamanWeb').style.transform="scale(2.2,1.9)";
         }
     </script>
     <script src="https://nhnet.github.io/overrideShutdownCode/overrideCode.js"></script>
